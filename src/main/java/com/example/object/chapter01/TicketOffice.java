@@ -13,12 +13,12 @@ public class TicketOffice {
         this.tickets.addAll(List.of(tickets));  //티켓[] 배열을 불변 리스트로 감쌈
     }
 
-    public Ticket getTicket() {
-        return tickets.remove(0);
+    public void sellTicketTo(Audience audience) {
+        plusAmount(audience.buy(getTicket()));
     }
 
-    public void minusAmount(Long amount) {
-        this.amount -= amount;
+    private Ticket getTicket() {
+        return tickets.remove(0);
     }
 
     public void plusAmount(Long amount) {

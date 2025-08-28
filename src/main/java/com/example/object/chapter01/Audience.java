@@ -7,7 +7,7 @@ public class Audience { //관람객
         this.bag = bag;
     }
 
-    public Bag getBag() {
-        return bag;
+    public Long buy(Ticket ticket) {
+        return bag.hold(ticket);
     }
 }
